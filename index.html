@@ -8,7 +8,12 @@
   </head>
   <body>
     <main class="container">
+      <h1>Main Heading</h1>
+      <h2>Sub Heading</h2>
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
       <button>Test jQuery</button>
+      <h2>Sub Heading 2</h2>
     </main>
 
     <script
@@ -16,11 +21,10 @@
       integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
       crossorigin="anonymous"
     ></script>
+
     <script>
       $(document).ready(function () {
-        $("button").click(function () {
-          alert("yep, it's working");
-        });
+        $("main h1+h2").css("text-decoration", "underline");
       });
     </script>
   </body>
