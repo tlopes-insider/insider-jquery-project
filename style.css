@@ -46,3 +46,8 @@ button {
 button:hover {
   background-color: var(--secondary-color);
 }
+
+.conditionalStyle {
+  color: black;
+  background-color: aqua;
+}
