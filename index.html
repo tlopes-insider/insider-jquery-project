@@ -8,13 +8,8 @@
   </head>
   <body>
     <main class="container">
-      <ul>
-        <li>odd list item</li>
-        <li>even list item</li>
-        <li>odd list item</li>
-        <li>even list item</li>
-        <li>odd list item</li>
-      </ul>
+      <p class="special text">special paragraph</p>
+      <span>random text</span>
     </main>
 
     <script
@@ -25,15 +20,19 @@
 
     <script>
       $(document).ready(function () {
-        $("li").each(iteration);
+        $("p").removeClass();
+        $("span").addClass("special");
 
-        function iteration(index) {
-          if (index % 2 === 0) {
-            $(this).css("background-color", "red");
-          } else {
-            $(this).css("background-color", "green");
-          }
-        }
+        $("span").click(function () {
+          $(this).toggleClass("active");
+        });
+        console.log($("span").hasClass("special"));
+
+        $("span").css({
+          color: "blue",
+          fontSize: "2rem",
+          fontWeight: "600",
+        });
       });
     </script>
   </body>
