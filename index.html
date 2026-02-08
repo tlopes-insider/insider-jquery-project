@@ -8,9 +8,9 @@
   </head>
   <body>
     <main class="container">
-      <p>random paragraph 1</p>
-      <p>random paragraph 2</p>
-      <p>random paragraph 3</p>
+      <p class="one">random paragraph 1</p>
+      <p class="two">random paragraph 2</p>
+      <p class="three">random paragraph 3</p>
       <p>random paragraph 4</p>
     </main>
 
@@ -22,11 +22,14 @@
 
     <script>
       $(document).ready(function () {
-        $("p").each(iteration);
+        let classNames = [];
+        $("p[class]").each(iteration);
+
         function iteration(index) {
-          let item = $(this);
-          console.log(index + " " + item.text());
+          classNames[index] = $(this).attr("class");
         }
+
+        console.log(classNames.join(", "));
       });
     </script>
   </body>
