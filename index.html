@@ -8,10 +8,13 @@
   </head>
   <body>
     <main class="container">
-      <p class="one">random paragraph 1</p>
-      <p class="two">random paragraph 2</p>
-      <p class="three">random paragraph 3</p>
-      <p>random paragraph 4</p>
+      <ul>
+        <li>odd list item</li>
+        <li>even list item</li>
+        <li>odd list item</li>
+        <li>even list item</li>
+        <li>odd list item</li>
+      </ul>
     </main>
 
     <script
@@ -22,14 +25,15 @@
 
     <script>
       $(document).ready(function () {
-        let classNames = [];
-        $("p[class]").each(iteration);
+        $("li").each(iteration);
 
         function iteration(index) {
-          classNames[index] = $(this).attr("class");
+          if (index % 2 === 0) {
+            $(this).css("background-color", "red");
+          } else {
+            $(this).css("background-color", "green");
+          }
         }
-
-        console.log(classNames.join(", "));
       });
     </script>
   </body>
