@@ -8,11 +8,26 @@
   </head>
   <body>
     <main class="container">
-      <p>normal paragraph</p>
-      <p class="special">special paragraph</p>
-      <p>normal paragraph</p>
-      <p class="fourth">fourth paragraph</p>
-      <p>fifth paragraph</p>
+      <ul class="first">
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+      </ul>
+
+      <ul class="second">
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+      </ul>
+
+      <ul class="third">
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+      </ul>
     </main>
 
     <script
@@ -23,7 +38,13 @@
 
     <script>
       $(document).ready(function () {
-        $("p[class]").addClass("conditionalStyle");
+        $(".first li:first").css("font-size", "2rem");
+        $(".first li:last").html("Last Item");
+        $(".second li:even").addClass("even");
+        $(".second li:odd").addClass("odd");
+        $(".third li:eq(2)").hide();
+        $(".third li:lt(2)").css("font-size", "2rem");
+        $(".third li:gt(2)").css("background-color", "green");
       });
     </script>
   </body>

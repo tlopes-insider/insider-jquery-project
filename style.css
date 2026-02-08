@@ -47,7 +47,12 @@ button:hover {
   background-color: var(--secondary-color);
 }
 
-.conditionalStyle {
-  color: black;
+.even {
+  background-color: red;
+  color: white;
+}
+
+.odd {
   background-color: aqua;
+  color: black;
 }
