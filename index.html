@@ -8,26 +8,22 @@
   </head>
   <body>
     <main class="container">
-      <ul class="first">
-        <li>list item</li>
-        <li>list item</li>
-        <li>list item</li>
-        <li>list item</li>
-      </ul>
-
-      <ul class="second">
-        <li>list item</li>
-        <li>list item</li>
-        <li>list item</li>
-        <li>list item</li>
-      </ul>
-
-      <ul class="third">
-        <li>list item</li>
-        <li>list item</li>
-        <li>list item</li>
-        <li>list item</li>
-      </ul>
+      <form action="">
+        <input type="button" /> <br />
+        <input type="file" /> <br />
+        <input type="hidden" /> <br />
+        <input type="password" /> <br />
+        <input type="radio" /> <br />
+        <input type="reset" /> <br />
+        <input type="submit" /> <br />
+        <input type="text" /> <br />
+        <select>
+          <option>Option</option>
+        </select>
+        <br />
+        <textarea></textarea> <br />
+        <button>Button</button>
+      </form>
     </main>
 
     <script
@@ -38,13 +34,8 @@
 
     <script>
       $(document).ready(function () {
-        $(".first li:first").css("font-size", "2rem");
-        $(".first li:last").html("Last Item");
-        $(".second li:even").addClass("even");
-        $(".second li:odd").addClass("odd");
-        $(".third li:eq(2)").hide();
-        $(".third li:lt(2)").css("font-size", "2rem");
-        $(".third li:gt(2)").css("background-color", "green");
+        $(":input").css("border", "1px solid red");
+        $("input").css("background-color", "green");
       });
     </script>
   </body>
