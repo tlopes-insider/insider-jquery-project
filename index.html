@@ -8,22 +8,10 @@
   </head>
   <body>
     <main class="container">
-      <form action="">
-        <input type="button" /> <br />
-        <input type="file" /> <br />
-        <input type="hidden" /> <br />
-        <input type="password" /> <br />
-        <input type="radio" /> <br />
-        <input type="reset" /> <br />
-        <input type="submit" /> <br />
-        <input type="text" /> <br />
-        <select>
-          <option>Option</option>
-        </select>
-        <br />
-        <textarea></textarea> <br />
-        <button>Button</button>
-      </form>
+      <p>random paragraph 1</p>
+      <p>random paragraph 2</p>
+      <p>random paragraph 3</p>
+      <p>random paragraph 4</p>
     </main>
 
     <script
@@ -34,8 +22,11 @@
 
     <script>
       $(document).ready(function () {
-        $(":input").css("border", "1px solid red");
-        $("input").css("background-color", "green");
+        $("p").each(iteration);
+        function iteration(index) {
+          let item = $(this);
+          console.log(index + " " + item.text());
+        }
       });
     </script>
   </body>
