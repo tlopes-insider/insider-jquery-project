@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="container"></main>
+    <main class="container">
+      <div class="quote-text">
+        <h1 id="quote">Click below to read a random quote</h1>
+        <p id="author">- by tlopes</p>
+      </div>
+
+      <button id="fetch">New Quote</button>
+    </main>
 
     <script
       src="https://code.jquery.com/jquery-4.0.0.js"
@@ -15,32 +22,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script>
-      const API_URL = "https://dummyjson.com/quotes";
-
-      $(document).ready(function () {
-        $.ajax({
-          method: "GET",
-          url: API_URL,
-          dataType: "json",
-          success: gotData,
-          error: function (xhr, status, error) {
-            console.error("Error fetching data:", error);
-          },
-        });
-
-        function gotData(response) {
-          console.log(response);
-          const { quotes } = response;
-          $.each(quotes, parseData);
-        }
-
-        function parseData(index, item) {
-          $("main.container").append(
-            `<p>${item.author} is the author number: ${index}</p>`,
-          );
-        }
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
