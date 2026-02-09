@@ -8,9 +8,7 @@
   </head>
   <body>
     <main class="container">
-      <p>random paragraph</p>
-      <p class="special">special paragraph</p>
-      <button type="button">Animate</button>
+      <p>Returned with Ajax: <span id="result"></span></p>
     </main>
 
     <script
@@ -20,16 +18,23 @@
     ></script>
 
     <script>
-      $("button").click(function () {
-        let specialParagraph = $(".special");
-        let randomParagraph = $("p:not(.special)");
+      $(document).ready(function () {
+        $.ajax({
+          url: "random.txt",
+          dataType: "text",
+          success: gotData,
+          error: noData,
+        });
 
-        specialParagraph.animate(
-          {
-            marginLeft: "-100px",
-          },
-          4000,
-        );
+        function gotData(data, xhr, status) {
+          console.log(xhr, status);
+          $("#result").text(data);
+        }
+
+        function noData(xhr, status, error) {
+          console.log(xhr, status);
+          alert(error);
+        }
       });
     </script>
   </body>
