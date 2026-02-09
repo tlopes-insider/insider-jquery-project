@@ -19,22 +19,12 @@
 
     <script>
       $(document).ready(function () {
-        $.ajax({
-          url: "random.txt",
-          dataType: "text",
-          success: gotData,
-          error: noData,
+        $("#result").load("random.txt", function (response, status, xhr) {
+          if (status === "error") {
+            console.log(xhr, status);
+            alert(xhr.statusText);
+          }
         });
-
-        function gotData(data, xhr, status) {
-          console.log(xhr, status);
-          $("#result").text(data);
-        }
-
-        function noData(xhr, status, error) {
-          console.log(xhr, status);
-          alert(error);
-        }
       });
     </script>
   </body>
