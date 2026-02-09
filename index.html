@@ -8,10 +8,7 @@
   </head>
   <body>
     <main class="container">
-      <input id="name" type="text" placeholder="John" /> <br />
-      <input id="lastName" type="text" placeholder="Doe" /> <br />
-      <input id="phone" type="text" placeholder="123-456-7890" /> <br />
-      <input id="email" type="text" placeholder="test@email.com" /> <br />
+      <p>random paragraph</p>
     </main>
 
     <script
@@ -22,14 +19,8 @@
 
     <script>
       $(document).ready(function () {
-        $("#name, #lastName, #phone, #email").change(function () {
-          $(this).toggleClass("special");
-
-          $(".special").css({
-            color: "blue",
-            fontSize: "2rem",
-            fontWeight: "600",
-          });
+        $("main > p").hover(function () {
+          alert("Hovered!");
         });
       });
     </script>
