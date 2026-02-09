@@ -1,23 +1,20 @@
-const API_URL = "https://dummyjson.com/quotes";
+const API_URL = "https://dummyjson.com/quotes/random";
 
-$(document).ready(function () {
+$("#fetch").click(function () {
   $.ajax({
     method: "GET",
     url: API_URL,
     dataType: "json",
     success: gotData,
-    error: function (xhr, status, error) {
-      console.error("Error fetching data:", error);
+    error: function (xhr, status) {
+      console.log(status);
+      console.error("Error fetching data:", xhr.statusText);
     },
   });
 
   function gotData(response) {
-    console.log(response);
-    const { quotes } = response;
-    $.each(quotes, parseData);
-  }
-
-  function parseData(index, item) {
-    // console.log(index, item);
+    const { quote, author } = response;
+    $("#quote").html(`${quote}`);
+    $("#author").html(`- ${author}`);
   }
 });
