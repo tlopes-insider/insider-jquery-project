@@ -8,8 +8,8 @@
   </head>
   <body>
     <main class="container">
-      <p class="special text">special paragraph</p>
-      <span>random text</span>
+      <p>special paragraph</p>
+      <button id="clickable">Transfer Paragraph</button>
     </main>
 
     <script
@@ -20,18 +20,14 @@
 
     <script>
       $(document).ready(function () {
-        $("p").removeClass();
-        $("span").addClass("special");
+        $("#clickable").click(function () {
+          $("p").toggleClass("special");
 
-        $("span").click(function () {
-          $(this).toggleClass("active");
-        });
-        console.log($("span").hasClass("special"));
-
-        $("span").css({
-          color: "blue",
-          fontSize: "2rem",
-          fontWeight: "600",
+          $(".special").css({
+            color: "blue",
+            fontSize: "2rem",
+            fontWeight: "600",
+          });
         });
       });
     </script>
