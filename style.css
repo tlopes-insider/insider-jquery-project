@@ -48,12 +48,8 @@ button:hover {
   background-color: var(--secondary-color);
 }
 
-.even {
-  background-color: red;
-  color: white;
-}
-
-.odd {
-  background-color: aqua;
-  color: black;
+.special {
+  color: blue;
+  font-size: 2rem;
+  font-weight: 600;
 }

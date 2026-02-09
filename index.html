@@ -18,14 +18,18 @@
     ></script>
 
     <script>
-      $(document).ready(function () {
-        $("main > p")
-          .mouseenter(function () {
-            $(this).css("color", "blue");
-          })
-          .mouseleave(function () {
-            $(this).css("color", "white");
-          });
+      let mainDiv = $("main.container");
+
+      function changeDiv(event) {
+        mainDiv.toggleClass("special");
+      }
+
+      mainDiv.on("mouseover mouseleave", changeDiv);
+
+      mainDiv.on("click", function () {
+        mainDiv.off("mouseover mouseleave", changeDiv);
+        mainDiv.html("Clicked!");
+        mainDiv.removeClass("special");
       });
     </script>
   </body>
