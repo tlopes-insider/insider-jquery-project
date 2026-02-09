@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="container">
-      <p>Returned with Ajax: <span id="result"></span></p>
-    </main>
+    <main class="container"></main>
 
     <script
       src="https://code.jquery.com/jquery-4.0.0.js"
@@ -18,13 +16,22 @@
     ></script>
 
     <script>
+      const API_URL = "https://dummyjson.com/quotes";
+
       $(document).ready(function () {
-        $("#result").load("random.txt", function (response, status, xhr) {
-          if (status === "error") {
-            console.log(xhr, status);
-            alert(xhr.statusText);
-          }
-        });
+        $.getJSON(API_URL, gotData);
+
+        function gotData(response) {
+          console.log(response);
+          const { quotes } = response;
+          $.each(quotes, parseData);
+        }
+
+        function parseData(index, item) {
+          $("main.container").append(
+            `<p>${item.author} is the author number: ${index}</p>`,
+          );
+        }
       });
     </script>
   </body>
