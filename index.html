@@ -9,6 +9,8 @@
   <body>
     <main class="container">
       <p>random paragraph</p>
+      <p class="special">special paragraph</p>
+      <button type="button">Animate</button>
     </main>
 
     <script
@@ -18,18 +20,14 @@
     ></script>
 
     <script>
-      let mainDiv = $("main.container");
+      $("button").click(function () {
+        let randomParagraph = $("p:not(.special)");
 
-      function changeDiv(event) {
-        mainDiv.toggleClass("special");
-      }
-
-      mainDiv.on("mouseover mouseleave", changeDiv);
-
-      mainDiv.on("click", function () {
-        mainDiv.off("mouseover mouseleave", changeDiv);
-        mainDiv.html("Clicked!");
-        mainDiv.removeClass("special");
+        if (randomParagraph.is(":hidden")) {
+          randomParagraph.show("slow");
+        } else {
+          randomParagraph.hide("fast");
+        }
       });
     </script>
   </body>
