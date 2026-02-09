@@ -21,13 +21,15 @@
 
     <script>
       $("button").click(function () {
+        let specialParagraph = $(".special");
         let randomParagraph = $("p:not(.special)");
 
-        if (randomParagraph.is(":hidden")) {
-          randomParagraph.show("slow");
-        } else {
-          randomParagraph.hide("fast");
-        }
+        specialParagraph.animate(
+          {
+            marginLeft: "-100px",
+          },
+          4000,
+        );
       });
     </script>
   </body>
