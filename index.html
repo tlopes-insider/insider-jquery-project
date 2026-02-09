@@ -8,8 +8,10 @@
   </head>
   <body>
     <main class="container">
-      <p>special paragraph</p>
-      <button id="clickable">Transfer Paragraph</button>
+      <input id="name" type="text" placeholder="John" /> <br />
+      <input id="lastName" type="text" placeholder="Doe" /> <br />
+      <input id="phone" type="text" placeholder="123-456-7890" /> <br />
+      <input id="email" type="text" placeholder="test@email.com" /> <br />
     </main>
 
     <script
@@ -20,8 +22,8 @@
 
     <script>
       $(document).ready(function () {
-        $("#clickable").click(function () {
-          $("p").toggleClass("special");
+        $("#name, #lastName, #phone, #email").change(function () {
+          $(this).toggleClass("special");
 
           $(".special").css({
             color: "blue",
