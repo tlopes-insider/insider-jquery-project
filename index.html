@@ -19,9 +19,13 @@
 
     <script>
       $(document).ready(function () {
-        $("main > p").hover(function () {
-          alert("Hovered!");
-        });
+        $("main > p")
+          .mouseenter(function () {
+            $(this).css("color", "blue");
+          })
+          .mouseleave(function () {
+            $(this).css("color", "white");
+          });
       });
     </script>
   </body>
